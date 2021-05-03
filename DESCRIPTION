@@ -1,0 +1,25 @@
+Package: cdg
+Type: Package
+Title: Critical Difference Generator
+Version: 0.1.0
+Authors@R: person("Kieran", "Molloy", email = "k.molloy@lancs.ac.uk",
+                role = c("aut", "cre"))
+Description: Make pretty comparisons of classifiers
+Depends: R (>= 3.1.0)
+Imports:
+    graphics,
+    stats,
+    utils
+Suggests:
+    knitr,
+    devtools,
+    roxygen2,
+    testthat,
+    rmarkdown
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/K-Molloy/cdg/
+BugReports: https://github.com/K-Molloy/cdg/issues
+RoxygenNote: 7.1.1
+VignetteBuilder: knitr
