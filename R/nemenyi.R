@@ -18,16 +18,20 @@
 #' @examples
 #' cd = nemenyiCDVal(num.classifiers = 3, num.scenarios = 4)
 #' @export
-nemenyiCDVal <- function (alpha = 0.05, num.classifiers, num.scenarios) {
-  # degrees of freedom
-  df <- num.classifiers * (num.scenarios - 1)
-  # q_alpha value using Tukey helper function
-  qa <- qtukey(p=1 - alpha, nmeans=num.classifiers, df=df)/sqrt(2)
-  # critical difference using formula described in details
-  cd <- qa * sqrt((num.classifiers * (num.classifiers + 1)) / (6 * num.scenarios))
-  # return critical difference
-  return(cd)
-}
+nemenyiCDVal <-
+  function (alpha = 0.05, num.classifiers, num.scenarios) {
+    # degrees of freedom
+    df <- num.classifiers * (num.scenarios - 1)
+    # q_alpha value using Tukey helper function
+    qa <- qtukey(p = 1 - alpha,
+                 nmeans = num.classifiers,
+                 df = df) / sqrt(2)
+    # critical difference using formula described in details
+    cd <-
+      qa * sqrt((num.classifiers * (num.classifiers + 1)) / (6 * num.scenarios))
+    # return critical difference
+    return(cd)
+  }
 
 
 
@@ -36,6 +40,6 @@ nemenyiCDVal <- function (alpha = 0.05, num.classifiers, num.scenarios) {
 #' differ aftera  statistical test of multiple comparisons (such as the
 #' Friedman test) has rejected the null hypothesis that the performance of the
 #' comparisons on the groups of data is similar.
-nemenyiTest <- function(){
+nemenyiTest <- function() {
   # still need to add this :p
 }

@@ -12,7 +12,8 @@
 #'
 #' @examples
 #' # Not Run
-#' # criticalDifferenceDiagram(someData)
+#' data(scc413)
+#' # criticalDifferenceDiagram(scc413)
 #' @export
 criticalDifferenceDiagram <-
   function (data,
@@ -39,8 +40,8 @@ criticalDifferenceDiagram <-
 
     # calculate Nemenyi Critical Difference Value
     cd <- nemenyiCDVal(alpha = alpha,
-                       num.alg = k,
-                       num.problems = N)
+                       num.classifiers = k,
+                       num.scenarios = N)
 
     # Reorder results
     mean.rank <- sort(colMeans(rankMatrix(data, ...)))
